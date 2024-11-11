@@ -8,18 +8,16 @@ The primary objective is to create a scalable, AI-powered financial assistant th
 ### Research Questions and Hypotheses
 * #### How can LLMs improve the accuracy and timeliness of financial advice?
 **Hypothesis:** Fine-tuning on financial datasets enhances the model’s contextual relevance, enabling it to offer precise, tailored recommendations.
-* #### Does real-time data retrieval enhance model responsiveness in dynamic financial scenarios?
-**Hypothesis:** Integrating a Retrieval-Augmented Generation (RAG) system with real-time data will improve the accuracy and context-awareness of financial advice.
 * #### Can QLoRA (Quantized Low-Rank Adaptation) achieve efficient fine-tuning without high computational costs?
 **Hypothesis:** Using QLoRA enables rapid adaptation to financial contexts, providing accurate, resource-efficient advice and making the model scalable.
 
 #### Related Work and Datasets
-The project builds on recent research in financial AI, particularly in real-time data retrieval and language processing, using advanced methods like RAG and Low-Rank Adaptation (LoRA) to improve accuracy and responsiveness. Two primary datasets serve as the foundation:
+The project builds on recent research in financial AI, particularly in real-time data retrieval and language processing, using advanced methods like Low-Rank Adaptation (LoRA) to improve accuracy and responsiveness. Two primary datasets serve as the foundation:
 * **Alpaca News API:** Real-time financial news data that keeps the model up-to-date with market trends.
 * **Hugging Face Finance-Alpaca Dataset:** A question-answer dataset focused on finance to train the model on common financial inquiries, providing it with essential background knowledge.
 
 #### Methods
-The tool’s development involves data collection, preprocessing, fine-tuning, and deployment. After data cleaning and embedding, the processed data is stored in a Vector Database (Qdrant) for efficient retrieval. LoRA is used to fine-tune the model to specialize in financial topics, while RAG supports real-time data retrieval, ensuring responses remain relevant and contextually accurate. The model is then deployed using a RESTful API, with Gradio providing an intuitive user interface for interactions.
+The tool’s development involves data collection, preprocessing, fine-tuning, and deployment. After data cleaning and embedding, the processed data is stored in a Vector Database (Qdrant) for efficient retrieval. LoRA is used to fine-tune the model to specialize in financial topics, ensuring responses remain relevant and contextually accurate. The model is then deployed using a RESTful API, with Gradio providing an intuitive user interface for interactions.
 
 #### Results
 Preliminary results indicate that the model successfully provides accurate, real-time financial advice tailored to individual queries. The combination of LLM fine-tuning and real-time retrieval enables a responsive, contextually aware financial assistant that adapts to dynamic user needs. This tool demonstrates the potential to make expert financial advice more accessible, empowering users to make informed decisions with ease and efficiency.
@@ -41,9 +39,6 @@ Embedding and Storage in Qdrant: Processed data is transformed into vector embed
 **LoRA Overview:** LoRA is used to fine-tune the language model, adjusting a minimal set of parameters that allow it to specialize in financial contexts without requiring complete retraining.
 **Training:** Through LoRA adaptation, the model learns to interpret financial data, allowing it to deliver accurate and context-sensitive financial advice.
 * **Performance Tracking:** Model performance is continuously monitored using Comet, a machine learning experiment management tool that tracks metrics and validates fine-tuning accuracy.
-* **Retrieval-Augmented Generation (RAG):**
-**Purpose of RAG:** RAG enhances the model's contextual accuracy by fetching relevant data from Qdrant during response generation.
-**Implementation:** When the model receives a query, RAG retrieves related information from Qdrant, allowing the model to incorporate the most recent and pertinent data into its responses. This ensures that responses are both accurate and contextually relevant.
 
 #### d.  Model Deployment
 * **RESTful API:** The fine-tuned model is deployed via a RESTful API, providing real-time accessibility for user interaction.
