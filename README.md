@@ -37,8 +37,14 @@ Embedding and Storage in Qdrant: Processed data is transformed into vector embed
 #### c. Modeling
 * **Fine-Tuning with LoRA (Low-Rank Adaptation):**
 **LoRA Overview:** LoRA is used to fine-tune the language model, adjusting a minimal set of parameters that allow it to specialize in financial contexts without requiring complete retraining.
+![adapters](https://github.com/user-attachments/assets/a7c5600d-48b8-426f-be95-6d4aea2cb0fb)
+
 **Training:** Through LoRA adaptation, the model learns to interpret financial data, allowing it to deliver accurate and context-sensitive financial advice.
-* **Performance Tracking:** Model performance is continuously monitored using Comet, a machine learning experiment management tool that tracks metrics and validates fine-tuning accuracy.
+![LoRA and QLoRA](https://github.com/user-attachments/assets/49bc20cc-eccd-481b-847f-8beea9ed4a6e)
+
+
+* **Performance Tracking:** Model performance is ![LoRA and QLoRA]
+continuously monitored using Comet, a machine learning experiment management tool that tracks metrics and validates fine-tuning accuracy.
 
 #### d.  Model Deployment
 * **RESTful API:** The fine-tuned model is deployed via a RESTful API, providing real-time accessibility for user interaction.
